@@ -64,19 +64,19 @@ namespace SSSM
 
             Console.WriteLine("Stock in memory:");
 
-            Console.WriteLine("Symbol\tType\tL. Div\tF. Div\tPar V.\tPrice\tTrades");
+            Console.WriteLine("Symbol\tType      \tL. Div\tF. Div\tPar V.\tPrice\tTrades");
 
             foreach (GenericStock stock in Stocks)
             {
 
                 if(stock is CommonStock)
                 {
-                    Console.WriteLine("{0,3}\tCommon\t{1:#0}\t\t{2:#0}\t{3:#0}\t{4:#0}", 
+                    Console.WriteLine("{0,3}\tCommon   \t{1:#0}\t\t{2:#0}\t{3:#0}\t{4:#0}", 
                         stock.Symbol, stock.LastDividend, stock.ParValue, stock.LastPrice, stock.Trades.Count);
                 }
                 else if(stock is PreferredStock)
                 {
-                    Console.WriteLine("{0,3}\tCommon\t{1:#0}\t{2:#0}%\t{3:#0}\t{4:#0}\t{5:#0}", 
+                    Console.WriteLine("{0,3}\tPreferred\t{1:#0}\t{2:#0}%\t{3:#0}\t{4:#0}\t{5:#0}", 
                         stock.Symbol, stock.LastDividend, ((PreferredStock)stock).FixedDividend*100, stock.ParValue,
                         stock.LastPrice, stock.Trades.Count);
                 }
